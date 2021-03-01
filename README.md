@@ -26,20 +26,20 @@
 | catch     | text          | null: false, foreign_key: true |
 | concept   | text          | null: false, foreign_key: true |
 | image     | ActiveStorage |                                |
-| user      | references    |                                |
+| user      | references    | foreign_key: true              |
 
 ### Association
 
-- has_many :prototype
+- belongs_to :user
 - has_many :comments
 
 ## comments テーブル
 
-| Column       | Type       | Options     |
-| ------------ | ---------- | ----------- |
-| text         | string     | null: false |
-| user         | references |             |
-| prototype    | references |             |
+| Column       | Type       | Options           |
+| ------------ | ---------- | ----------------- |
+| text         | string     | null: false       |
+| user         | references | foreign_key: true |
+| prototype    | references | foreign_key: true |
 
 ### Association
 
